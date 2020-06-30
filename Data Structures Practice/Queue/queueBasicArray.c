@@ -32,9 +32,38 @@ void enqueue()
 }
 void dequeue()
 {
+    if (front == -1)
+    {
+        printf("Queue Underflow\n");
+    }
+    else
+    {
+        printf(">>> %d is dequeued\n", queue[front]);
+        front++;
+        if (front > rear)
+        {
+            front = -1;
+            rear = -1;
+        }
+    }
+    printf("------------------------------------\n");
 }
 void traverse()
 {
+    if (front == -1 && rear == -1)
+    {
+        printf("queue is Empty\n");
+    }
+    else
+    {
+        printf("Queue is: ");
+        for (int i = front; i <= rear; i++)
+        {
+            printf("%d ", queue[i]);
+        }
+        printf("\n");
+    }
+    printf("------------------------------------\n");
 }
 
 int main()
